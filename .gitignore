@@ -8,4 +8,19 @@ logs
 .vscode
 .DS_Store
 
+
+# Local secrets and environments
+.env
+.env.*
+!.env.example
+integrations/aegis-rag/.env
+**/.venv/
+**/__pycache__/
+**/*.py[cod]
 poetry.toml
+**/.env
+**/.env.*
+!**/.env.example
+**/.venv/
+**/__pycache__/
+**/*.py[cod]

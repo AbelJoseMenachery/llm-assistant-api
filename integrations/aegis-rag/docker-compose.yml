@@ -1,0 +1,25 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: aegis-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: aegis-ui
+    ports:
+      - "8501:8501"
+    environment:
+      # Tell the UI container how to reach the API container via internal Docker networking
+      - API_URL=http://api:8000
+    depends_on:
+      - api
+    restart: unless-stopped

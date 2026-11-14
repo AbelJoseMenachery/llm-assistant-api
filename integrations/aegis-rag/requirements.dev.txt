@@ -1,0 +1,7 @@
+# Includes the API requirements so you have everything needed locally
+-r requirements.api.txt
+
+# --- Build / Export Tools ---
+# Strictly required for running src/export_embedder.py
+torch
+onnxscript

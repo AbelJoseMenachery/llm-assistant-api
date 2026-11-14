@@ -1,0 +1,21 @@
+description: "LLM Assistant API smoke evaluation"
+# Uses an OpenAI-compatible endpoint. Set OPENAI_API_KEY and OPENAI_BASE_URL
+# for the model endpoint you want to evaluate. This evaluates a model directly;
+# it does not claim to exercise the full upstream assistant API.
+providers:
+  - id: openai:chat:${PROMPTFOO_MODEL}
+    config:
+      temperature: 0
+prompts:
+  - "{{question}}"
+tests:
+  - vars:
+      question: "Explain RAG in two concise sentences."
+    assert:
+      - type: contains
+        value: "retriev"
+  - vars:
+      question: "Return the number 4 and nothing else."
+    assert:
+      - type: contains
+        value: "4"

@@ -1,0 +1,11 @@
+# --- Core ML & Vector Search ---
+numpy
+faiss-cpu
+onnxruntime
+# even though transformers expects pyTorch, we don't need it for our use case. So ignore the warning about missing
+# pyTorch when running the server.
+transformers
+
+# --- Agent & LLM ---
+google-genai
+python-dotenv

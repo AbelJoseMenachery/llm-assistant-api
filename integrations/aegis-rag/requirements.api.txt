@@ -1,0 +1,14 @@
+# Includes the core Agent/ML dependencies
+-r requirements.min.txt
+
+# --- API Framework ---
+fastapi
+uvicorn
+pydantic
+
+# --- Data Parsing & Uploads ---
+python-multipart
+PyPDF2
+
+# --- MLOps & Webhooks ---
+httpx>=0.27.0
